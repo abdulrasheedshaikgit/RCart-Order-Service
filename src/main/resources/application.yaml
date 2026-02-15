@@ -1,3 +1,18 @@
 spring:
+  profiles:
+    active: dev
   application:
-    name: RCart-Order-Service
+    name: rcart-order-service
+  config:
+    import: configserver:http://localhost:8080
+  cloud:
+    config:
+      label: dev
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
