@@ -1,5 +1,9 @@
 name: CI
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/*
 jobs:
   build:
     runs-on: ubuntu-latest
